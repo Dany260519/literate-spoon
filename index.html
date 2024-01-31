@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-pV+Vz+t2dRV+zKUoBbqFNFSPpf8E8Q/AR3XQ0Ob0sYtV2/ftG0LwGq+K1j5n4JiWnVihJZAnlD3oBEm4ysBQDg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset=UTF-8>
+    <meta name=viewport content=width=device-width, initial-scale=1.0>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+
+    <script>
+        function alternatePages(pageId) {
+            const page = document.getElementById("content");
+            const home = document.getElementById("home-page");
+            const promises = document.getElementById("promise-page");
+            const bible = document.getElementById("bible-content");
+            const dedication = document.getElementById("dedication-page");
+
+            // Ocultar todos los elementos
+            home.classList.add("hidden");
+            promises.classList.add("hidden");
+            bible.classList.add("hidden");
+            dedication.classList.add("hidden");
+
+            if (pageId === 1) {
+                home.classList.remove("hidden");
+            } else if (pageId === 2) {
+                promises.classList.remove("hidden");
+                
+                home.classList.add("hidden");
+                home.classList.remove("show");
+            } else if (pageId === 3) {
+                bible.classList.remove("hidden");
+        
+                home.classList.add("hidden");
+                home.classList.remove("show");
+            } else if (pageId === 4) {
+                dedication.classList.remove("hidden");
+        
+                home.classList.add("hidden");
+            home.classList.remove("show");
+            }
+        }
+
+        function menuChange(enter) {
+        const list = document.getElementById('menu-list');
+        const displayValue = enter ? 'block' : 'none';
+        list.style.display = displayValue;
+    }
+
+        function SelectPromise() {
+            const promises = [
+                "Justificados, pues, por la fe, tenemos paz paracon Dios por medio de nuestro Señor Jesucristo.",
+
+                "Cree en el Señor Jesucristo, y serás salvo, tú y tu casa.",
+
+                "Si Dios es por nosotros, ¿quién contra nosotros? El que no escatimó ni a su propio Hijo, sino que lo entregó por todos nosotros, ¿cómo no nos dará también con él todas las cosas?",
+
+                "Porque yo sé los pensamientos que tengo acerca de vosotros, dice Jehová, pensamientos de paz, y no de mal, para daros el fin que esperáis.",
+
+                "Porque sol y escudo es Jehová Dios; gracia y gloria dará Jehová. No quitará el bien a los que andan en integridad.",
+
+                "Pues si vosotros, siendo malos, sabéis dar buenas dádivas a vuestros hijos, ¿cuánto más vuestro Padre que está en los cielos dará buenas cosas a los que le pidan?",
+
+                "Con amor eterno te he amado; por tanto, te prolongué mi misericordia.",
+
+                "Echando toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.",
+
+                "He aquí que yo soy Jehová, Dios de toda carne; ¿habrá algo que sea difícil para mí?",
+
+                "No os ha sobrevenido ninguna tentación que no sea humana; pero fiel es Dios, que no os dejará ser tentados más de lo que podéis resistir, sino que dará también juntamente con la tentación la salida, para que podáis soportar.",
+
+                "Pero fiel es el Señor, que os afirmará y guardará del mal",
+
+                "Mantengamos firme, sin fluctuar, la profesión de nuestra esperanza, porque fiel es el que prometió.",
+
+                "Si fuéremos infieles, él permanece fiel; él no puede negarse a sí mismo.",
+
+                "Antes, en todas estas cosas somos más que vencedores por medio de aquel que nos amó.",
+
+                "De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron; he aquí todas son hechas nuevas.",
+
+                "Jehová es bueno, fortaleza en el día de la angustia; y conoce a los que en él confían",
+
+                "Y el mundo pasa, y sus deseos; pero el que hace la voluntad de Dios permanece para siempre.",
+
+                "Si confesamos nuestros pecados, él es fiel y justo para perdonar nuestros pecados, y limpiarnos de toda maldad.",
+
+                "Yo he santificado esta casa que tú has edificado, para poner mi nombre en ella para siempre.",
+
+                "Y sabemos que a los que aman a Dios, todas las cosas les ayudan a bien, esto es, a los que conforme a su propósito son llamados.",
+
+                "Mas buscad primeramente el reino de Dios y su justicia, y todas estas cosas os serán añadidas.",
+
+                "Joven fui, y he envejecido, Y no he visto justo desamparado, Ni su descendencia que mendigue pan.",
+
+                "Enseñándoles que guarden todas las cosas que os he mandado; y he aquí yo estoy con vosotros todos los días, hasta el fin del mundo. Amén.",
+
+                "Someteos, pues, a Dios; resistid al diablo, y huirá de vosotros.",
+
+                "El da esfuerzo al cansado, y multiplica las fuerzas al que no tiene ningunas.",
+
+                "Guarda silencio ante Jehová, y espera en él. No te alteres con motivo del que prospera en su camino, Por el hombre que hace maldades.",
+
+                "No perdáis, pues, vuestra confianza, que tiene grande galardón; porque os es necesaria la paciencia, para que habiendo hecho la voluntad de Dios, obtengáis la promesa.",
+
+                "No nos cansemos, pues, de hacer bien; porque a su tiempo segaremos, si no desmayamos.",
+
+                "Estas cosas os he hablado para que en mí tengáis paz. En el mundo tendréis aflicción; pero confiad, yo he vencido al mundo.",
+
+                "Mi Dios, pues, suplirá todo lo que os falta conforme a sus riquezas en gloria en Cristo Jesús.",
+
+                "Cuando pases por las aguas, yo estaré contigo; y si por los ríos, no te anegarán. Cuando pases por el fuego, no te quemarás, ni la llama arderá en ti.",
+
+                "Cuando pases por las aguas, yo estaré contigo; y si por los ríos, no te anegarán. Cuando pases por el fuego, no te quemarás, ni la llama arderá en ti.",
+
+                "Sean vuestras costumbres sin avaricia, contentos con lo que tenéis ahora; porque él dijo: No te desampararé, ni te dejaré.",
+
+                "Conoce, pues, que Jehová tu Dios es Dios, Dios fiel que guarda el convenio y la misericordia a los que le aman y guardan sus mandamientos, hasta mil generaciones.",
+
+                "Y me ha dicho: Bástate mi gracia; porque mi poder se perfecciona en la debilidad. Por tanto, de buena gana me gloriaré más bien en mis debilidades, para que repose sobre mí el poder de Cristo.",
+
+                "Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar.",
+
+                "Muchas son las aflicciones del justo, Pero de todas ellas le librará Jehová.",
+
+                "Fíate de Jehová de todo tu corazón, Y no te apoyes en tu propia prudencia. Reconócelo en todos tus caminos, Y él enderezará tus veredas.",
+
+                "Te haré entender, y te enseñaré el camino en que debes andar; Sobre ti fijaré mis ojos.",
+
+                "Y si alguno de vosotros tiene falta de sabiduría, pídala a Dios, el cual da a todos abundantemente y sin reproche, y le será dada.",
+
+                "Pedid, y se os dará; buscad, y hallaréis; llamad, y se os abrirá. Porque todo aquel que pide, recibe; y el que busca, halla; y al que llama, se le abrirá.",
+
+                "Y todo lo que pidiereis en oración, creyendo, lo recibiréis.",
+
+                "Y esta es la confianza que tenemos en él, que si pedimos alguna cosa conforme a su voluntad, él nos oye.",
+
+                "Clama a mí, y yo te responderé, y te enseñaré cosas grandes y ocultas que tú no conoces.",
+
+                "Y antes que clamen, responderé yo; mientras aún hablan, yo habré oído.",
+
+                "Confesaos vuestras ofensas unos a otros, y orad unos por otros, para que seáis sanados. La oración eficaz del justo puede mucho.",
+
+                "Si permanecéis en mí, y mis palabras permanecen en vosotros, pedid todo lo que queréis, y os será hecho.",
+
+                "Porque no nos ha dado Dios espíritu de cobardía, sino de poder, de amor y de dominio propio.",
+
+                "No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo; siempre te ayudaré, siempre te sustentaré con la diestra de mi justicia.",
+
+                "Esforzaos y cobrad ánimo; no temáis, ni tengáis miedo de ellos, porque Jehová tu Dios es el que va contigo; no te dejará, ni te desamparará.",
+
+                "Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo en dondequiera que vayas.",
+
+                "Sean vuestras costumbres sin avaricia, contentos con lo que tenéis ahora; porque él dijo: No te desampararé, ni te dejaré; de manera que podemos decir confiadamente: El Señor es mi ayudador; no temeré Lo que me pueda hacer el hombre.",
+
+                "Jehová es mi luz y mi salvación; ¿de quién temeré? Jehová es la fortaleza de mi vida; ¿de quién he de atemorizarme?",
+
+                "No temas delante de ellos, porque contigo estoy para librarte, dice Jehová.",
+
+                "Mas buscad primeramente el reino de Dios y su justicia, y todas estas cosas os serán añadidas.",
+
+                "Pero los que esperan en Jehová tendrán nuevas fuerzas, levantarán alas como las águilas, correrán y no se cansarán.",
+
+                "De cierto te bendeciré con abundancia y te multiplicaré grandemente.",
+
+                "Os digo que todo lo que pidieras orando, creed que lo recibiréis, y os vendrá.",
+
+                "Acercaos a Dios y él se acercará a vosotros.",
+
+                "Echa sobre Jehová tu carga, y él te sostendrá, no dejará para siempre caído al justo.",
+
+                "Porque los ojos del Señor están sobre los justos, y sus oídos atentos a sus oraciones.",
+
+                "Encomienda a Jehová tus obras y tus pensamientos serán afirmados.",
+
+                "Si tenéis fe como un grano de mostaza, diréis a ese monte pásate de aquí para allá, y se pasará, y nada os será imposible.",
+
+                "El que tiene misericordia se apiadará de ti, al oír la voz de tu clamor te responderá.",
+
+                "Mía es la plata, mío es el oro, dice Jehová de los Ejércitos.",
+
+                "Caerán a tu lado mil y diez mil a tu diestra, mas a ti no llegarán.",
+
+                "Conocerás entonces que yo soy Jehová, y que no se avergonzarán los que esperan en mí.",
+
+                "Honra a Jehová en tus bienes, y con las premisias de todos tus frutos, y serán llenos tus graneros con abundancia.",
+
+                "Aumentará Jehová bendición sobre vosotros; sobre vosotros y sobre vuestros hijos.",
+
+                "Lo que es imposible para los hombres, es posible para Dios.",
+
+                "Se fiel hasta la muerte y yo te daré la corona de la vida.",
+
+                "Porque donde están dos o tres congregados en mi nombre ahí estoy yo en medio de ellos.",
+
+                "No temas, cree solamente.",
+
+                "Yo Jehová te he llamado en justicia, y te sostendré por la mano.",
+
+                "Todo lo que pidáis al Padre en mi nombre, lo haré, para que el Padre sea glorificado en el Hijo.",
+
+                "Porque nada hay imposible para Dios.",
+
+                "No se ha acortado la mano de Jehová para salvar; ni se ha endurecido su oído para oír.",
+
+                "El ángel de Jehová acampa alrededor de los que le temen y los defiende.",
+
+                "Humillaos delante del Señor, y él os exaltará.",
+
+                "Todo lo puedo en Cristo que me fortalece.",
+
+                "Jehová peleará por vosotros, y vosotros estaréis tranquilos.",
+
+                "Invócame en el día de la angustia, te libraré y tú me honrarás.",
+
+                "Yo soy tu socorro; dice Jehová el Santo de Israel es tu redentor.",
+
+                "Yo conozco tus obras, por eso he puesto delante de ti una puerta abierta que nadie puede cerrar.",
+
+                "Buscad el reino de Dios y su justicia, y todas las cosas serán añadidas.",
+
+                "Los que buscan a Jehová no tendrán falta de ningún bien",
+
+                "Pelearán contra ti, pero no te vencerán, porque yo estoy contigo, dice Jehová, para librarte.",
+
+                "Hay bendiciones sobre la cabeza del justo.",
+
+                "Porque satisfaré el alma cansada y saciaré a toda alma entristecida.",
+
+                "Tened vosotros paciencia, y afirmad vuestros corazones porque el Señor se acerca.",
+
+                "Yo iré delante de ti y enderezaré lugares torcidos, quebrantaré puertas de bronce y cerrojos de hierro haré pedazos.",
+
+                "Yo amo a los que me aman, y me hallan los que temprano me buscan.",
+
+                "Olvidarás tu miseria, o te acordarás de ella como aguas que pasaron.",
+
+                "Jehová es tu guardador, Jehová es tu sombra, tu mano derecha.",
+
+                "Pero yo miraré a aquel que es pobre y humilde de espíritu y que tiembla a mi palabra.",
+
+                "Si algo pedís en mi nombre, yo lo haré.",
+
+                "Pero serviréis a Jehová vuestro Dios, y él bendecirá tu pan y tus aguas.",
+
+                "Acercaos a Dios, y él se acercará a vosotros.",
+
+                "Ninguna arma forjada contra ti prosperará.",
+
+                "El que tiene mis mandamientos, y los guarda ese es el que me ama; y el que ama; será amado por mi Padre y yo le amaré y me manifestaré a él.",
+
+                "Dios es amor y el que permanece en amor permanece en Dios y Dios en él.",
+
+                "Las armas de nuestra milicia no son carnales, sino poderosas en Dios para la destrucción de fortalezas.",
+
+                "Él mismo tomó nuestras enfermedades y llevó nuestras dolencias.",
+
+                "Vosotros sois de Dios, y los habéis vencido; porque mayor es el que está en vosotros, que el que está en el mundo.",
+
+                "Si dos de vosotros se pusieran de acuerdo en la Tierra acerca de cualquier cosa que pidieren, les será hecho por mi Padre que está en los cielos.",
+
+                "A Jehová ha puesto siempre delante de mí; porque está a mi diestra, no seré conmovido.",
+
+                "Ha dado alimento a los que le temen; para siempre se acordará de su pacto.",
+
+                "Al pobre librará de su pobreza, y en la aflicción despertará su oído.",
+
+                "Mi presencia irá contigo, y te daré descanso.",
+
+                "Porque Jehová será tu confianza, y él preservará tu pie de quedar preso.",
+
+                "La bendición de Jehová es la que enriquece, y no añade tristeza con ella.",
+
+                "Él sana a los quebrantados de corazón, y venda sus heridas.",
+            ];
+
+            const direction = [
+            "Romanos 5:1",
+            "Hechos 16:31",
+            "Romanos 8:31,32",
+            "Jeremías 21:11",
+            "Salmos 84:11",
+            "Mateo 7:11",
+            "Jeremías 31:3",
+            "1 Pedro 5:7",
+            "Jeremías 32:27",
+            "1 Corintios 10:13",
+            "2 Tesalonisenses 3:3",
+            "Hebreos 10:23",
+            "2 Timoteo 2:13",
+            "Romanos 8:37",
+            "2 Corintios 5:17",
+            "Nahúm 1:7",
+            "1 Juan 2:17",
+            "1 Juan 1:9",
+            "1 Reyes 9:3",
+            "Romanos 8:28",
+            "Mateo 6:33",
+            "Salmos 37:25",
+            "Mateo 28:20",
+            "Santiago 4:7",
+            "Isaías 40:29",
+            "Salmos 37:7",
+            "Hebreos 10:35,36",
+            "Gálatas 6:9",
+            "Juan 16:33",
+            "Filipenses 4:19",
+            "Isaías 43:2",
+            "Hebreos 13:5",
+            "Deuteronomio 7:9",
+            "2 Corintos 12:9",
+            "1 Juan 1:9",
+            "Mateos 11:28",
+            "Salmos 34:19",
+            "Proverbios 3:5,6",
+            "Salmos 32:8",
+            "Santiago 1:5",
+            "Mateo 7:7,8",
+            "Mateo 21:22",
+            "1 Juan 5:14",
+            "Jeremías 33:3",
+            "Isaías 65:24",
+            "Santiago 5:16",
+            "Juan 15:7",
+            "2 Timoteo 1:7",
+            "Isaías 41:10",
+            "Deuteronomio 31:6",
+            "Josué 1:9",
+            "Hebreos 13:5,6",
+            "Salmos 27:1",
+            "Jeremías 1:8",
+            "Mateo 6:33",
+            "Isaias 40:31",
+            "Hebreos 6:14",
+            "Marco 11:24",
+            "Santiago 4:8",
+            "Salmos 55:22",
+            "Pedro 3:12",
+            "Proverbios 16:3",
+            "Mateo 17:20",
+            "Isaias 30:19",
+            "Hageo 2:8",
+            "Salmos 91:7",
+            "Isaias 49:23",
+            "Proverbios 3:9-10",
+            "Salmos 115:1",
+            "Lucas 18:27",
+            "Apocalipsis 2:10",
+            "Mateo 18:20",
+            "Marcos 5:36",
+            "Isaias 42:6",
+            "Juan 14:13",
+            "Lucas 1:37",
+            "Isaias 59:1",
+            "Salmos 34:7",
+            "Santiago 4:10",
+            "Filipenses 4:13",
+            "Éxodo 14:14",
+            "Salmos 50:15",
+            "Isaias 41:14",
+            "Apocalipsis 3:8",
+            "Lucas 12:31",
+            "Salmos 34:10",
+            "Jeremías 1:19",
+            "Proverbios 10:6",
+            "Jeremías 31:25",
+            "Santiago 5:8",
+            "Isaias 45:2",
+            "Proverbios 8:17",
+            "Job 11:16",
+            "Salmos 121:5",
+            "Isaias 66:2",
+            "Juan 14:14",
+            "Éxodo 23:25",
+            "Santiago 4:8",
+            "Isaias 54:17",
+            "Juan 14:21",
+            "1 Juan 4:16",
+            "2 Corintios 10:4",
+            "Mateo 8:16",
+            "1 Juan 4:4" ,
+            "Mateo 18:19",
+            "Salmos 16:8",
+            "Salmos 111:5",
+            "Job 36:15",
+            "Éxodo 33:14",
+            "Proverbios 3:26",
+            "Proverbios 10:22",
+            "Salmos 147:3"
+            ];
+        
+            // Select a random index
+            const randomIndex = Math.floor(Math.random() * promises.length);
+
+            // Get the selected promise and its direction
+            const selectedPromise = promises[randomIndex];
+            const selectedDirection = direction[randomIndex];
+
+            // Display the selected promise and direction
+            const promiseContent = document.getElementById('promise-content');
+            promiseContent.innerHTML = `<p id ="promise-text" class="adj-text">${selectedPromise}</p><p id ="promise-direction" class="adj-text">${selectedDirection}</p>`;
+        }
+    </script>
+    
+    <header id="nav-header">
+        <nav id="navbar">
+            <div id="link-content"  onmouseenter="menuChange(true)" onmouseleave="menuChange(false)">
+                <span id="menu">
+                    <img src="https://cdn-icons-png.flaticon.com/512/20/20840.png" class="links" width="40px">
+                </span>
+                <div id="menu-list">
+                    <img id="logo" src="" class="links">
+                    <span class="links" id="home" onclick="alternatePages(1)">Home</span>
+                    <span class="links" id="bible" onclick="alternatePages(3)">Biblia</span>
+                    <span class="links" id="my_promise" onclick="alternatePages(2)">Promesas</span>
+                    <span class="links" id="dedication" onclick="alternatePages(4)">Dedicatoria</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="content">
+        <div id="home-page" class="show">
+            <script src="https://www.biblegateway.com/votd/votd.write.callback.js"></script>
+            <script src="https://www.biblegateway.com/votd/get/?format=json&version=NTV&callback=BG.votdWriteCallback"></script>
+            <!-- alternative for no javascript -->
+            <noscript>
+            <iframe framespacing="0" frameborder="no" src="https://www.biblegateway.com/votd/get/?format=html&version=NTV">View Verse of the Day</iframe>
+            </noscript>
+        </div>
+
+        <div id="promise-page" class="hidden">
+            <span id="promise-text">
+                Porque la palabra de Dios es viva y eficaz, y más cortante que toda espada de dos filos; y penetra hasta partir el alma y el espíritu, las coyunturas y los tuétanos, y discierne los pensamientos y las intenciones del corazón.
+                <span>Hebreos 4:12</span>
+            </span>
+            <div id="promise-content"></div>
+            <button id="start" onclick="SelectPromise()">Tomar Promesa</button>
+        </div>
+
+        <div id="bible-content" class="hidden">
+            <header id="section-bible">
+                <h1>Biblia</h1>
+            </header>
+        
+            <section id="oldTestament">
+                <h2>Antiguo Testamento</h2>
+            </section>
+            
+            <section id="newTestament">
+                <h2>Nuevo Testamento</h2>
+            </section>
+            
+            <section id="books"></section>
+            <section id="chapters"></section>
+            <div id="verses"></div>
+            
+            <button id="backButton" class="hidden">Botón de Retroceso</button>
+        
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const oldTestamentSection = document.getElementById('oldTestament');
+                    const newTestamentSection = document.getElementById('newTestament');
+                    const chaptersSection = document.getElementById('chapters');
+                    const versesSection = document.getElementById('verses');
+                    const backButton = document.getElementById('backButton');
+        
+                    const apiBaseUrl = 'https://ajphchgh0i.execute-api.us-west-2.amazonaws.com/dev/api';
+        
+                    // Obtener la lista de libros desde la API
+                    fetch(`${apiBaseUrl}/books`)
+                        .then(response => response.json())
+                        .then(books => {
+                            // Ordenar los libros según su verdadero orden
+                            books.sort((a, b) => a.order - b.order);
+        
+                            // Crear botones para cada libro y clasificarlos por Antiguo y Nuevo Testamento
+                            books.forEach(book => {
+                                const button = document.createElement('button');
+                                button.textContent = book.name;
+                                button.addEventListener('click', () => showChaptersAndVerses(book.id, book.chapters));
+                                if (book.testament === 'OT') {
+                                    oldTestamentSection.appendChild(button);
+                                } else {
+                                    newTestamentSection.appendChild(button);
+                                }
+                            });
+                        })
+                        .catch(error => console.error('Error obteniendo libros:', error));
+        
+                    // Crear un botón sin función aparente
+                    backButton.addEventListener('click', goBack);
+        
+                    function showChaptersAndVerses(bookId, chapters) {
+                        // Ocultar las secciones de capítulos y libros
+                        oldTestamentSection.classList.add('hidden');
+                        newTestamentSection.classList.add('hidden');
+        
+                        // Limpiar sección de capítulos y versículos
+                        chaptersSection.innerHTML = '';
+                        versesSection.innerHTML = '';
+        
+                        // Crear botones para cada capítulo
+                        chapters.forEach(chapter => {
+                            const button = document.createElement('button');
+                            button.textContent = `Capítulo ${chapter.chapter}`;
+                            button.addEventListener('click', () => showVerses(bookId, chapter.chapter));
+                            chaptersSection.appendChild(button);
+                        });
+        
+                        // Mostrar la sección de capítulos
+                        chaptersSection.classList.remove('hidden');
+        
+                        // Mostrar el botón de retroceso
+                        backButton.classList.remove('hidden');
+                    }
+        
+                    function showVerses(bookId, chapter) {
+                        // Ocultar la sección de capítulos
+                        chaptersSection.classList.add('hidden');
+        
+                        // Limpiar sección de versículos
+                        versesSection.innerHTML = '';
+        
+                        // Obtener la lista de versículos desde la API
+                        fetch(`${apiBaseUrl}/books/${bookId}/verses/${chapter}`)
+                            .then(response => response.json())
+                            .then(verses => {
+                                // Ordenar los versículos por número
+                                verses.sort((a, b) => parseInt(a.reference.split(':')[1]) - parseInt(b.reference.split(':')[1]));
+        
+                                // Mostrar los versículos en orden numérico
+                                verses.forEach(verse => {
+                                    versesSection.insertAdjacentHTML('beforeend', `<p>${verse.text}</p>`);
+                                });
+        
+                                // Mostrar la sección de versículos
+                                versesSection.classList.remove('hidden');
+        
+                                // Mostrar el botón de retroceso
+                                backButton.classList.remove('hidden');
+                            })
+                            .catch(error => console.error('Error obteniendo versículos:', error));
+                    }
+        
+                    function goBack() {
+                        // Ocultar la sección actual y mostrar la anterior
+                        if (!versesSection.classList.contains('hidden')) {
+                            versesSection.classList.add('hidden');
+                            chaptersSection.classList.remove('hidden');
+                            // Mostrar el botón de retroceso solo en la sección de versículos
+                            backButton.classList.remove('hidden');
+                        } else if (!chaptersSection.classList.contains('hidden')) {
+                            chaptersSection.classList.add('hidden');
+                            oldTestamentSection.classList.remove('hidden');
+                            newTestamentSection.classList.remove('hidden');
+                            // Ocultar el botón de retroceso en las secciones de libros y capítulos
+                            backButton.classList.add('hidden');
+                        }
+                    }
+
+                });
+            </script>
+        </div>
+        
+        <div id="dedication-page" class="hidden">
+            <h1 id="heading-amor">A mi amado</h1>
+            <p id="special-text">
+                Mi amado esposo, espero que esta pagina hecha con todo mi amor y con la sabiduria de Dios te sea util, y siempre que la utilices recuerdes cuanto t ama Dios y tu esposa. 
+                Dios te bendiga mi corazon y te de siempre sabiduria. 
+                Eres demasiado especial...
+            </p>
+            <span id="amor">TE AMO CON TODO MI CORAZON!</span>
+        </div>
+    </div>
+</body>
+</html>
