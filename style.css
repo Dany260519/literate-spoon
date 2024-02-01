@@ -9,6 +9,28 @@ body {
     font-family: 'Neuton', serif;
 }
 
+@media only screen and (max-width: 600px) {
+    .links-display {
+    font-size: 13px;
+    transition: font-size 0.2s;
+}
+    
+    .links-display:hover {
+    font-size: 12px;
+    }
+
+ #menu, #menu-list {
+    height: 35px;
+ }   
+
+    
+#home-page, #promise-page {
+    margin: 15% auto;
+    width: 70%;
+}
+}
+
+
 .hidden {
     display: none;
 }
@@ -45,7 +67,6 @@ body {
     margin: 2px;
     position: relative;
     top: 10px;
-    font-size:15px;
 }
 
 #menu {
@@ -87,7 +108,7 @@ body {
 .links-display:hover {
     border-bottom: 3px solid #dcdcdc;
     color: #dcdcdc;
-    font-size: 14px;
+    font-size: 15px;
     transition: font-size 0.2s;
     -webkit-transition: font-size 0.2s;
     -moz-transition: font-size 0.2s;
@@ -102,7 +123,7 @@ body {
 
 #home-page, #promise-page {
     margin: 10% auto;
-    width: 70%;
+    width: 50%;
     font-size: larger;
 }
 
