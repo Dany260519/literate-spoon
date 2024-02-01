@@ -2,21 +2,11 @@
 <html lang=en>
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-pV+Vz+t2dRV+zKUoBbqFNFSPpf8E8Q/AR3XQ0Ob0sYtV2/ftG0LwGq+K1j5n4JiWnVihJZAnlD3oBEm4ysBQDg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
     <meta charset=UTF-8>
     <meta name=viewport content=width=device-width, initial-scale=1.0>
     <title>Document</title>
 </head>
-<body>
-    <style>
-        .hidden {
-            display: none;
-        }
-
-        .show {
-            display: block;
-        }
-    </style>
-
     <script>
         function alternatePages(pageId) {
             const page = document.getElementById("content");
@@ -52,10 +42,16 @@
         }
 
         function menuChange(enter) {
-        const list = document.getElementById('menu-list');
-        const displayValue = enter ? 'block' : 'none';
-        list.style.display = displayValue;
-    }
+            const list = document.getElementById('menu-list');
+            const move = document.getElementById('link-content');
+
+            const opacityValue = enter ? 'block' : 'none';
+
+            list.style.display = opacityValue;
+            move.classList.add('changeMenu');
+        }
+
+
 
         function SelectPromise() {
             const promises = [
@@ -408,22 +404,22 @@
 
             // Display the selected promise and direction
             const promiseContent = document.getElementById('promise-content');
-            promiseContent.innerHTML = `<p id ="promise-text" class="adj-text">${selectedPromise}</p><p id ="promise-direction" class="adj-text">${selectedDirection}</p>`;
+            promiseContent.innerHTML = `<span id ="promise-selected">${selectedPromise}<br/><span id ="promise-direction" class="adj-text span-promise">${selectedDirection}</span></span>`;
         }
     </script>
     
     <header id="nav-header">
         <nav id="navbar">
-            <div id="link-content"  onmouseenter="menuChange(true)" onmouseleave="menuChange(false)">
-                <span id="menu">
-                    <img src="https://cdn-icons-png.flaticon.com/512/20/20840.png" class="links" width="40px">
+            <div id="link-content"  onmouseleave="menuChange(false)">
+                <span id="menu"  onmouseenter="menuChange(true)">
+                    <img src="https://www.pinclipart.com/picdir/big/532-5328945_menu-bar-icon-white-clipart-png-download-menu.png" class="links" width="30px" id="menu-img">
                 </span>
-                <div id="menu-list">
+                <div id="menu-list" class="hidden">
                     <img id="logo" src="" class="links">
-                    <span class="links" id="home" onclick="alternatePages(1)">Home</span>
-                    <span class="links" id="bible" onclick="alternatePages(3)">Biblia</span>
-                    <span class="links" id="my_promise" onclick="alternatePages(2)">Promesas</span>
-                    <span class="links" id="dedication" onclick="alternatePages(4)">Dedicatoria</span>
+                    <span class="links links-display" id="home" onclick="alternatePages(1)">Home</span>
+                    <span class="links links-display" id="bible" onclick="alternatePages(3)">Biblia</span>
+                    <span class="links links-display" id="my_promise" onclick="alternatePages(2)">Promesas</span>
+                    <span class="links links-display" id="dedication" onclick="alternatePages(4)">Dedicatoria</span>
                 </div>
             </div>
         </nav>
@@ -435,17 +431,20 @@
             <script src="https://www.biblegateway.com/votd/get/?format=json&version=NTV&callback=BG.votdWriteCallback"></script>
             <!-- alternative for no javascript -->
             <noscript>
-            <iframe framespacing="0" frameborder="no" src="https://www.biblegateway.com/votd/get/?format=html&version=NTV">View Verse of the Day</iframe>
+            <iframe id="home-text" framespacing="0" frameborder="no" src="https://www.biblegateway.com/votd/get/?format=html&version=NTV">View Verse of the Day</iframe>
             </noscript>
         </div>
 
         <div id="promise-page" class="hidden">
-            <span id="promise-text">
+            <div id="promise-text">
                 Porque la palabra de Dios es viva y eficaz, y más cortante que toda espada de dos filos; y penetra hasta partir el alma y el espíritu, las coyunturas y los tuétanos, y discierne los pensamientos y las intenciones del corazón.
-                <span>Hebreos 4:12</span>
-            </span>
-            <div id="promise-content"></div>
-            <button id="start" onclick="SelectPromise()">Tomar Promesa</button>
+                <br/>
+                <span class="span-promise">Hebreos 4:12</span>
+            </div>
+            <div id="new-content-p">
+                <div id="promise-content"></div>
+                <button id="start" onclick="SelectPromise()">Tomar Promesa</button>
+            </div>
         </div>
 
         <div id="bible-content" class="hidden">
