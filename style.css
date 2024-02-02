@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Neuton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink&display=swap');
 
 * {
     box-sizing: border-box;
@@ -8,28 +9,6 @@
 body {
     font-family: 'Neuton', serif;
 }
-
-@media only screen and (max-width: 800px) {
-    .links-display {
-    font-size: 13px;
-    transition: font-size 0.2s;
-}
-    
-    .links-display:hover {
-    font-size: 12px;
-    }
-
- #menu, #menu-list {
-    height: 35px;
- }   
-
-    
-#home-page, #promise-page {
-    margin: 15% auto;
-    width: 70%;
-}
-}
-
 
 .hidden {
     display: none;
@@ -121,9 +100,9 @@ body {
 }
 
 
-#home-page, #promise-page {
+#home-page, #promise-page, #bible-content, #dedication-page {
     margin: 10% auto;
-    width: 50%;
+    width: 40%;
     font-size: larger;
 }
 
@@ -142,6 +121,7 @@ body {
     font-size: medium;
     border: #7b9cb6 dotted 2px;
     padding: 0 3px;
+    cursor: pointer;
 }
 
 
@@ -198,3 +178,81 @@ body {
     padding: 5px 10px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
+
+
+.flex-section {
+    text-align: center;
+    align-items: left;
+    justify-content: space-between;
+    width: 100%;
+}
+
+    .flex-section span, .flex-section h2{
+        padding: 5px;
+        margin: 5px;
+        text-align: center;
+        float: left;
+        box-sizing: border-box; /* Incluye el relleno y el margen en el ancho del elemento */
+      }
+
+      .flex-section h2 {
+        clear: both;
+        width: 100%;
+        color: #4c82af;
+      }
+
+    .flex-section span {
+        padding: 5px;
+        margin: 5px;
+        width: 30%; /* Ajusta el ancho según tus necesidades */
+        font-family: 'Cinzel', serif;
+        font-size: 15px;
+    }
+
+    #backButton {
+        position: fixed;
+        top: 10%;
+        right: 5%;
+        width: auto;
+    }
+
+    #backButton:hover {
+        transform: translateX(-3px);
+        transition: transform 0.3s;
+        -webkit-transform: translateX(-3px);
+        -moz-transform: translateX(-3px);
+        -ms-transform: translateX(-3px);
+        -o-transform: translateX(-3px);
+        -webkit-transition: transform 0.3s;
+        -moz-transition: transform 0.3s;
+        -ms-transition: transform 0.3s;
+        -o-transition: transform 0.3s;
+}
+
+   #img-button {
+    width: 50px;
+    cursor: pointer;
+   }
+
+   .flex-section span:hover {
+    color: #4c82af;
+    cursor: pointer;
+   }
+
+
+
+
+
+   #dedication-page {
+        font-family: 'Aref Ruqaa Ink', serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    #heading-amor, #amor {
+        color: #4c82af;
+    }
+
+    #amor-img {
+        float: right;
+        clear: both;
+    }
