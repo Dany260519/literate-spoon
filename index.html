@@ -23,21 +23,28 @@
 
             if (pageId === 1) {
                 home.classList.remove("hidden");
+
+                bible.classList.remove("flex-section");
             } else if (pageId === 2) {
                 promises.classList.remove("hidden");
+
+                bible.classList.remove("flex-section");
                 
                 home.classList.add("hidden");
                 home.classList.remove("show");
             } else if (pageId === 3) {
                 bible.classList.remove("hidden");
+                bible.classList.add('flex-section');
         
                 home.classList.add("hidden");
                 home.classList.remove("show");
             } else if (pageId === 4) {
                 dedication.classList.remove("hidden");
         
+                bible.classList.remove("flex-section");
+
                 home.classList.add("hidden");
-            home.classList.remove("show");
+                home.classList.remove("show");
             }
         }
 
@@ -448,15 +455,11 @@
         </div>
 
         <div id="bible-content" class="hidden">
-            <header id="section-bible">
-                <h1>Biblia</h1>
-            </header>
-        
-            <section id="oldTestament">
+            <section id="oldTestament" class="section-book">
                 <h2>Antiguo Testamento</h2>
             </section>
             
-            <section id="newTestament">
+            <section id="newTestament" class="section-book">
                 <h2>Nuevo Testamento</h2>
             </section>
             
@@ -464,7 +467,7 @@
             <section id="chapters"></section>
             <div id="verses"></div>
             
-            <button id="backButton" class="hidden">Botón de Retroceso</button>
+            <span id="backButton" class="hidden"><img src="https://icon-icons.com/icons2/72/PNG/256/back_arrow_14447.png" id="img-button"></span>
         
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
@@ -485,7 +488,7 @@
         
                             // Crear botones para cada libro y clasificarlos por Antiguo y Nuevo Testamento
                             books.forEach(book => {
-                                const button = document.createElement('button');
+                                const button = document.createElement('span');
                                 button.textContent = book.name;
                                 button.addEventListener('click', () => showChaptersAndVerses(book.id, book.chapters));
                                 if (book.testament === 'OT') {
@@ -511,7 +514,7 @@
         
                         // Crear botones para cada capítulo
                         chapters.forEach(chapter => {
-                            const button = document.createElement('button');
+                            const button = document.createElement('span');
                             button.textContent = `Capítulo ${chapter.chapter}`;
                             button.addEventListener('click', () => showVerses(bookId, chapter.chapter));
                             chaptersSection.appendChild(button);
@@ -580,6 +583,7 @@
                 Eres demasiado especial...
             </p>
             <span id="amor">TE AMO CON TODO MI CORAZON!</span>
+            <img id="amor-img" width="200px" src="https://static.vecteezy.com/system/resources/previews/001/936/385/non_2x/lovers-couple-happy-valentine-cartoon-character-illustration-vector.jpg">
         </div>
     </div>
 </body>
